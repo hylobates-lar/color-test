@@ -1,3 +1,10 @@
+This is a test to color in a basic flower svg image by clicking on a path/section. This test will turn any portion of the flower blue when clicked.
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
