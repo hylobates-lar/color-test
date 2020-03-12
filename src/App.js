@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Flower from './components/Flower';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    fillColors: Array(22).fill('white'),
+    currentColor: 'blue'
+  }
+
+  onFillColor = (i) => {
+    let newFillColors = this.state.fillColors.slice(0)
+    newFillColors[i] = this.state.currentColor
+
+    this.setState({
+      fillColors: newFillColors
+    })
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Flower fillColors={this.state.fillColors} onFill={this.onFillColor} />
+      </div>
+    );
+  }
 }
 
 export default App;
