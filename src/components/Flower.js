@@ -3,6 +3,8 @@ import React from 'react';
 export default class Flower extends React.Component {
     render () {
         return (
+            // this is the breakdown for the flower image including all paths
+            
             <svg onClick={this.clickEvent} xmlns="http://www.w3.org/2000/svg" width="793.70076" height="793.7067066666666">
                 <title>Sun Flower Template</title>
                 <g id="layer2" transform="translate(114 66)" display="inline">
