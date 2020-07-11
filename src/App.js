@@ -1,11 +1,18 @@
 import React from 'react';
 import './App.css';
 import Flower from './components/Flower';
+import ColorPalette from './components/ColorPalette';
 
 class App extends React.Component {
   state = {
     fillColors: Array(22).fill('white'),
     currentColor: 'blue'
+  }
+
+  changeColor = (color) => {
+    this.setState({
+      currentColor: color
+    })
   }
 
   onFillColor = (i) => {
@@ -20,7 +27,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Flower fillColors={this.state.fillColors} onFill={this.onFillColor} />
+        <div className= "flower">
+          < Flower fillColors={this.state.fillColors} onFill={this.onFillColor} />
+        </div>
+        < ColorPalette currentColor={this.state.currentColor} changeColor={this.changeColor}/>
       </div>
     );
   }
