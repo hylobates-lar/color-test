@@ -5,7 +5,7 @@ export default class Flower extends React.Component {
         return (
             // this is the breakdown for the flower image including all paths
             
-            <svg onClick={this.clickEvent} xmlns="http://www.w3.org/2000/svg" width="793.70076" height="793.7067066666666">
+            <svg xmlns="http://www.w3.org/2000/svg" width="793.70076" height="793.7067066666666">
                 <title>Sun Flower Template</title>
                 <g id="layer2" transform="translate(114 66)" display="inline">
                 <g id="svg_27" transform="matrix(0.849029 0 0 0.849029 65.2874 25.9633)">

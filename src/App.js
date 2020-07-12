@@ -1,39 +1,26 @@
-import React from 'react';
-import './App.css';
-import Flower from './components/Flower';
-import ColorPalette from './components/ColorPalette';
+import React, { useState } from 'react'
+import './App.css'
+import Flower from './components/Flower'
+import ColorPalette from './components/ColorPalette'
 
-class App extends React.Component {
-  state = {
-    fillColors: Array(22).fill('white'),
-    currentColor: 'blue'
+const App = () => {
+  const [fillColors, setFillColors] = useState(Array(22).fill('white'))
+  const [currentColor, setCurrentColor] = useState('blue')
+
+  const onFillColor = (i) => {
+    let newFillColors = fillColors.slice(0)
+    newFillColors[i] = currentColor
+    setFillColors(newFillColors)
   }
 
-  changeColor = (color) => {
-    this.setState({
-      currentColor: color
-    })
-  }
-
-  onFillColor = (i) => {
-    let newFillColors = this.state.fillColors.slice(0)
-    newFillColors[i] = this.state.currentColor
-
-    this.setState({
-      fillColors: newFillColors
-    })
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <div className= "flower">
-          < Flower fillColors={this.state.fillColors} onFill={this.onFillColor} />
-        </div>
-        < ColorPalette currentColor={this.state.currentColor} changeColor={this.changeColor}/>
+  return (
+    <div className="App">
+      <div className= "flower">
+        <Flower fillColors={fillColors} onFill={onFillColor} />
       </div>
-    );
-  }
+      <ColorPalette currentColor={currentColor} changeColor={setCurrentColor}/>
+    </div>
+  )
 }
 
-export default App;
+export default App
